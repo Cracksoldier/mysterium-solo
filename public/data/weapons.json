@@ -1,0 +1,44 @@
+[
+  {
+    "id": "wpn_01",
+    "category": "weapon",
+    "name": "The Letter Opener",
+    "description": "Silver-handled, thin as a whisper. Found in the writing desk, its edge too sharp for correspondence.",
+    "tags": ["silver", "sharp", "small", "hands", "writing", "thin", "quiet", "blade"]
+  },
+  {
+    "id": "wpn_02",
+    "category": "weapon",
+    "name": "The Decanter",
+    "description": "Heavy crystal, still half-full of port. The base is cracked in a shape that tells a story.",
+    "tags": ["glass", "heavy", "wine", "crystal", "blunt", "red", "indoor", "table"]
+  },
+  {
+    "id": "wpn_03",
+    "category": "weapon",
+    "name": "The Surgical Clamp",
+    "description": "Cold iron, designed for closure. It was not used for surgery this night.",
+    "tags": ["iron", "medicine", "cold", "sharp", "tools", "hands", "cutting", "metal"]
+  },
+  {
+    "id": "wpn_04",
+    "category": "weapon",
+    "name": "The Rope",
+    "description": "Jute, salt-stiffened, thirty years old at least. The knot is a sailor's hitch.",
+    "tags": ["rope", "sea", "knot", "old", "stiffness", "enclosure", "hands", "salt"]
+  },
+  {
+    "id": "wpn_05",
+    "category": "weapon",
+    "name": "The Glass Shard",
+    "description": "Broken from something larger — a mirror, perhaps, or a window that should have stayed closed.",
+    "tags": ["glass", "sharp", "reflection", "broken", "small", "light", "thin", "cutting"]
+  },
+  {
+    "id": "wpn_06",
+    "category": "weapon",
+    "name": "The Poisoned Vial",
+    "description": "A small dark bottle with no label. The residue inside has dried to a crust the colour of old leaves.",
+    "tags": ["poison", "small", "dark", "plants", "decay", "smell", "apothecary", "bottle"]
+  }
+]

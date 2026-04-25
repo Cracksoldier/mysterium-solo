@@ -1,0 +1,44 @@
+[
+  {
+    "id": "loc_01",
+    "category": "location",
+    "name": "The Wine Cellar",
+    "description": "A vaulted underground room with rows of dusty bottles. The air is cold and the light never reaches the far wall.",
+    "tags": ["underground", "cold", "dark", "stone", "old", "enclosed", "damp", "wine"]
+  },
+  {
+    "id": "loc_02",
+    "category": "location",
+    "name": "The Conservatory",
+    "description": "Glass walls sweating with humidity, filled with overgrown tropical plants. Something large moves in the undergrowth.",
+    "tags": ["glass", "plants", "warmth", "humidity", "growth", "enclosed", "nature", "light"]
+  },
+  {
+    "id": "loc_03",
+    "category": "location",
+    "name": "The Attic Study",
+    "description": "Books stacked to the rafters, a single lamp burning over a locked desk. The stairs creak in a language only some understand.",
+    "tags": ["height", "books", "dust", "light", "wood", "secrets", "stairs", "old"]
+  },
+  {
+    "id": "loc_04",
+    "category": "location",
+    "name": "The Lake Jetty",
+    "description": "A rotting wooden pier extending into black water. Fog sits motionless above the surface at all hours.",
+    "tags": ["water", "decay", "outdoor", "fog", "wood", "silence", "cold", "reflection"]
+  },
+  {
+    "id": "loc_05",
+    "category": "location",
+    "name": "The Portrait Gallery",
+    "description": "A long corridor where the painted eyes follow movement. The floorboards have been recently scrubbed but still leave stains.",
+    "tags": ["faces", "eyes", "art", "blood", "indoor", "long", "old", "paint"]
+  },
+  {
+    "id": "loc_06",
+    "category": "location",
+    "name": "The Clock Tower",
+    "description": "The mechanism has not stopped since 1887. The room smells of iron and something sweeter. The view from the top shows everything.",
+    "tags": ["time", "height", "iron", "mechanical", "old", "view", "smell", "tower"]
+  }
+]

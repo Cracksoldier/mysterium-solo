@@ -1,0 +1,44 @@
+[
+  {
+    "id": "suspect_01",
+    "category": "suspect",
+    "name": "Elara Voss",
+    "description": "A retired clockmaker with silver-laced gloves and hollow eyes. Her workshop smells of machine oil and old regrets.",
+    "tags": ["time", "hands", "age", "craftsmanship", "silver", "quiet", "mechanical", "gloves"]
+  },
+  {
+    "id": "suspect_02",
+    "category": "suspect",
+    "name": "Dorian Ashbe",
+    "description": "A disgraced botanist whose greenhouse grows only black flowers. He speaks to plants more than to people.",
+    "tags": ["plants", "decay", "isolation", "black", "nature", "obsession", "garden", "silence"]
+  },
+  {
+    "id": "suspect_03",
+    "category": "suspect",
+    "name": "Mira Lund",
+    "description": "A travelling portrait painter whose subjects always look slightly afraid. Her suitcase is always locked.",
+    "tags": ["art", "faces", "travel", "fear", "secrets", "eyes", "canvas", "lock"]
+  },
+  {
+    "id": "suspect_04",
+    "category": "suspect",
+    "name": "Bertram Holt",
+    "description": "An aging sea captain who has not left land in twenty years. He still sleeps in a hammock and fears mirrors.",
+    "tags": ["sea", "age", "isolation", "water", "old", "fear", "reflection", "ship"]
+  },
+  {
+    "id": "suspect_05",
+    "category": "suspect",
+    "name": "Sable Vane",
+    "description": "A librarian who catalogs books no one else is allowed to read. She wears a ring on every finger.",
+    "tags": ["books", "knowledge", "secrets", "rings", "indoor", "power", "forbidden", "hands"]
+  },
+  {
+    "id": "suspect_06",
+    "category": "suspect",
+    "name": "Oswin Rake",
+    "description": "A former surgeon who now runs an apothecary. His instruments are always clean. His coat never is.",
+    "tags": ["medicine", "cutting", "blood", "knowledge", "hands", "iron", "coat", "tools"]
+  }
+]
