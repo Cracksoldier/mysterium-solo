@@ -16,10 +16,10 @@ export class DataStore {
 
   async loadAllCards(): Promise<void> {
     const [suspects, locations, weapons, visionCards] = await Promise.all([
-      fetch('/data/suspects.json').then(r => r.json()),
-      fetch('/data/locations.json').then(r => r.json()),
-      fetch('/data/weapons.json').then(r => r.json()),
-      fetch('/data/vision-cards.json').then(r => r.json()),
+      fetch('data/suspects.json').then(r => r.json()),
+      fetch('data/locations.json').then(r => r.json()),
+      fetch('data/weapons.json').then(r => r.json()),
+      fetch('data/vision-cards.json').then(r => r.json()),
     ]);
     this.suspects.set(suspects);
     this.locations.set(locations);
