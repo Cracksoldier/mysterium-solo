@@ -6,8 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "test:unit": "jest"
+    "test": "jest"
   },
   "private": true,
   "packageManager": "npm@11.12.1",
