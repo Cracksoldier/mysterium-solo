@@ -1,6 +1,7 @@
 import { Component, inject, computed } from '@angular/core';
 import { GameStore } from '../../../state/game.store';
 import { DataStore } from '../../../state/data.store';
+import { I18nService } from '../../../core/services/i18n.service';
 import { Category } from '../../../domain/models/card.model';
 
 const CATEGORIES: Category[] = ['suspect', 'location', 'weapon'];
@@ -8,8 +9,8 @@ const CATEGORIES: Category[] = ['suspect', 'location', 'weapon'];
 @Component({
   selector: 'app-psychic-status',
   template: `
-    <aside class="psychic-status" aria-label="Psychic Overview">
-      <h3 class="section-label">Psychics</h3>
+    <aside class="psychic-status" [attr.aria-label]="t()('psychic.aria')">
+      <h3 class="section-label">{{ t()('psychic.label') }}</h3>
       @for (p of session()?.psychics ?? []; track p.id) {
         <div class="psychic-row" [class.active]="store.activePsychic()?.id === p.id">
           <span class="psychic-name">{{ p.name }}</span>
@@ -23,7 +24,7 @@ const CATEGORIES: Category[] = ['suspect', 'location', 'weapon'];
             }
           </div>
           @if (p.incorrectGuesses > 0) {
-            <span class="misses" [attr.aria-label]="p.incorrectGuesses + ' incorrect'">
+            <span class="misses" [attr.aria-label]="p.incorrectGuesses + ' ' + t()('psychic.incorrect-aria')">
               ✗ {{ p.incorrectGuesses }}
             </span>
           }
@@ -48,4 +49,5 @@ export class PsychicStatusComponent {
   readonly data = inject(DataStore);
   readonly session = this.store.session;
   readonly categories = CATEGORIES;
+  protected readonly t = inject(I18nService).t;
 }

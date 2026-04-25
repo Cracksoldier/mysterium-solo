@@ -1,0 +1,44 @@
+[
+  {
+    "id": "loc_01",
+    "category": "location",
+    "name": "Der Weinkeller",
+    "description": "Ein gewölbter Untergrundraum mit Reihen verstaubter Flaschen. Die Luft ist kalt und das Licht erreicht die hintere Wand nie.",
+    "tags": ["underground", "cold", "dark", "stone", "old", "enclosed", "damp", "wine"]
+  },
+  {
+    "id": "loc_02",
+    "category": "location",
+    "name": "Das Gewächshaus",
+    "description": "Glaswände schwitzen vor Feuchtigkeit, gefüllt mit wuchernden Tropenpflanzen. Etwas Großes bewegt sich im Unterholz.",
+    "tags": ["glass", "plants", "warmth", "humidity", "growth", "enclosed", "nature", "light"]
+  },
+  {
+    "id": "loc_03",
+    "category": "location",
+    "name": "Das Dachbodenbüro",
+    "description": "Bücher gestapelt bis zum Gebälk, eine einzige Lampe über einem verschlossenen Schreibtisch. Die Treppen knarren in einer Sprache, die nur manche verstehen.",
+    "tags": ["height", "books", "dust", "light", "wood", "secrets", "stairs", "old"]
+  },
+  {
+    "id": "loc_04",
+    "category": "location",
+    "name": "Der Seesteg",
+    "description": "Ein verrottender Holzpier, der sich ins schwarze Wasser erstreckt. Nebel liegt zu jeder Stunde reglos über der Oberfläche.",
+    "tags": ["water", "decay", "outdoor", "fog", "wood", "silence", "cold", "reflection"]
+  },
+  {
+    "id": "loc_05",
+    "category": "location",
+    "name": "Die Porträtgalerie",
+    "description": "Ein langer Korridor, in dem die gemalten Augen jeder Bewegung folgen. Die Dielen wurden kürzlich geschrubbt, hinterlassen aber noch immer Flecken.",
+    "tags": ["faces", "eyes", "art", "blood", "indoor", "long", "old", "paint"]
+  },
+  {
+    "id": "loc_06",
+    "category": "location",
+    "name": "Der Uhrturm",
+    "description": "Das Uhrwerk ist seit 1887 nicht stehen geblieben. Der Raum riecht nach Eisen und etwas Süßlichem. Der Blick von oben zeigt alles.",
+    "tags": ["time", "height", "iron", "mechanical", "old", "view", "smell", "tower"]
+  }
+]

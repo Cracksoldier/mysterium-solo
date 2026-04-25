@@ -3,29 +3,30 @@ import { Router } from '@angular/router';
 import { GameStore } from '../../state/game.store';
 import { DataStore } from '../../state/data.store';
 import { ExportService } from '../../core/services/export.service';
+import { I18nService } from '../../core/services/i18n.service';
 
 @Component({
   selector: 'app-result',
   template: `
     <main class="result" [class.victory]="isVictory()" [class.defeat]="!isVictory()">
       <div class="result-card">
-        <div class="outcome-badge">{{ isVictory() ? 'Victory' : 'Defeat' }}</div>
-        <h1>{{ isVictory() ? 'The Truth Revealed' : 'The Ghost Falls Silent' }}</h1>
+        <div class="outcome-badge">{{ isVictory() ? t()('result.victory') : t()('result.defeat') }}</div>
+        <h1>{{ isVictory() ? t()('result.victory-title') : t()('result.defeat-title') }}</h1>
         <p class="subtitle">
           @if (isVictory()) {
-            The séance is complete. The murder is solved.
+            {{ t()('result.victory-subtitle') }}
           } @else {
-            The rounds are exhausted. The mystery endures.
+            {{ t()('result.defeat-subtitle') }}
           }
         </p>
 
         @for (p of psychics(); track p.id) {
           <div class="solution-block">
-            <h3>{{ p.name }}'s Board</h3>
+            <h3>{{ p.name }}{{ t()('result.board-suffix') }}</h3>
             <ul>
               @for (cat of categories; track cat) {
                 <li>
-                  <span class="cat-name">{{ cat }}</span>
+                  <span class="cat-name">{{ t()('cat.' + cat) }}</span>
                   <span class="card-name">{{ getSolvedName(cat, p.id) }}</span>
                 </li>
               }
@@ -36,22 +37,22 @@ import { ExportService } from '../../core/services/export.service';
         <div class="stats">
           <div class="stat">
             <span class="stat-val">{{ session()?.round ?? 0 }}</span>
-            <span class="stat-label">Rounds used</span>
+            <span class="stat-label">{{ t()('result.rounds-used') }}</span>
           </div>
           <div class="stat">
             <span class="stat-val">{{ totalIncorrect() }}</span>
-            <span class="stat-label">Incorrect guesses</span>
+            <span class="stat-label">{{ t()('result.incorrect-guesses') }}</span>
           </div>
           <div class="stat">
             <span class="stat-val">{{ uniqueCardsShown() }}</span>
-            <span class="stat-label">Vision cards seen</span>
+            <span class="stat-label">{{ t()('result.cards-seen') }}</span>
           </div>
         </div>
 
         <div class="action-row">
-          <button class="btn-primary" (click)="export()">Save Report (Markdown)</button>
-          <button class="btn-secondary" (click)="playAgain()">Play Again</button>
-          <button class="btn-secondary" (click)="home()">Home</button>
+          <button class="btn-primary" (click)="export()">{{ t()('result.export') }}</button>
+          <button class="btn-secondary" (click)="playAgain()">{{ t()('result.play-again') }}</button>
+          <button class="btn-secondary" (click)="home()">{{ t()('result.home') }}</button>
         </div>
       </div>
     </main>
@@ -84,6 +85,7 @@ export class ResultComponent {
   readonly data = inject(DataStore);
   readonly exportService = inject(ExportService);
   readonly router = inject(Router);
+  protected readonly t = inject(I18nService).t;
 
   readonly categories = ['suspect', 'location', 'weapon'] as const;
   readonly session = this.store.session;

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "suspect_01",
+    "category": "suspect",
+    "name": "Elara Voss",
+    "description": "Eine pensionierte Uhrmacherin mit silbergesäumten Handschuhen und hohlen Augen. Ihre Werkstatt riecht nach Maschinenöl und alten Reuerungen.",
+    "tags": ["time", "hands", "age", "craftsmanship", "silver", "quiet", "mechanical", "gloves"]
+  },
+  {
+    "id": "suspect_02",
+    "category": "suspect",
+    "name": "Dorian Ashbe",
+    "description": "Ein in Ungnade gefallener Botaniker, dessen Gewächshaus nur schwarze Blumen züchtet. Er spricht lieber mit Pflanzen als mit Menschen.",
+    "tags": ["plants", "decay", "isolation", "black", "nature", "obsession", "garden", "silence"]
+  },
+  {
+    "id": "suspect_03",
+    "category": "suspect",
+    "name": "Mira Lund",
+    "description": "Eine reisende Porträtmalerin, deren Modelle stets leicht verängstigt wirken. Ihr Koffer ist immer verschlossen.",
+    "tags": ["art", "faces", "travel", "fear", "secrets", "eyes", "canvas", "lock"]
+  },
+  {
+    "id": "suspect_04",
+    "category": "suspect",
+    "name": "Bertram Holt",
+    "description": "Ein alter Kapitän, der seit zwanzig Jahren das Land nicht verlassen hat. Er schläft noch immer in einer Hängematte und fürchtet Spiegel.",
+    "tags": ["sea", "age", "isolation", "water", "old", "fear", "reflection", "ship"]
+  },
+  {
+    "id": "suspect_05",
+    "category": "suspect",
+    "name": "Sable Vane",
+    "description": "Eine Bibliothekarin, die Bücher katalogisiert, die niemand sonst lesen darf. Sie trägt an jedem Finger einen Ring.",
+    "tags": ["books", "knowledge", "secrets", "rings", "indoor", "power", "forbidden", "hands"]
+  },
+  {
+    "id": "suspect_06",
+    "category": "suspect",
+    "name": "Oswin Rake",
+    "description": "Ein ehemaliger Chirurg, der jetzt eine Apotheke betreibt. Seine Instrumente sind stets sauber. Sein Mantel nie.",
+    "tags": ["medicine", "cutting", "blood", "knowledge", "hands", "iron", "coat", "tools"]
+  }
+]

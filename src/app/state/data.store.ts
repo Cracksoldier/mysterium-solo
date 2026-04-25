@@ -1,5 +1,6 @@
 import { Injectable, signal, computed } from '@angular/core';
 import { EvidenceCard, VisionCard } from '../domain/models/card.model';
+import { Lang } from '../core/services/i18n.service';
 
 @Injectable({ providedIn: 'root' })
 export class DataStore {
@@ -14,12 +15,13 @@ export class DataStore {
     ...this.weapons(),
   ]);
 
-  async loadAllCards(): Promise<void> {
+  async loadAllCards(lang: Lang = 'en'): Promise<void> {
+    const base = lang === 'en' ? 'data' : `data/${lang}`;
     const [suspects, locations, weapons, visionCards] = await Promise.all([
-      fetch('data/suspects.json').then(r => r.json()),
-      fetch('data/locations.json').then(r => r.json()),
-      fetch('data/weapons.json').then(r => r.json()),
-      fetch('data/vision-cards.json').then(r => r.json()),
+      fetch(`${base}/suspects.json`).then(r => r.json()),
+      fetch(`${base}/locations.json`).then(r => r.json()),
+      fetch(`${base}/weapons.json`).then(r => r.json()),
+      fetch(`${base}/vision-cards.json`).then(r => r.json()),
     ]);
     this.suspects.set(suspects);
     this.locations.set(locations);

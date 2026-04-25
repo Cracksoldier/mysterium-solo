@@ -2,6 +2,7 @@ import { Component, inject, computed } from '@angular/core';
 import { GameStore } from '../../../state/game.store';
 import { DataStore } from '../../../state/data.store';
 import { UiStore } from '../../../state/ui.store';
+import { I18nService } from '../../../core/services/i18n.service';
 import { EvidenceCardComponent } from './evidence-card/evidence-card.component';
 import { Category } from '../../../domain/models/card.model';
 
@@ -9,9 +10,9 @@ import { Category } from '../../../domain/models/card.model';
   selector: 'app-evidence-panel',
   imports: [EvidenceCardComponent],
   template: `
-    <section class="evidence-panel" aria-label="Evidence Board">
+    <section class="evidence-panel" [attr.aria-label]="t()('evidence.aria')">
       <div class="category-group">
-        <h3 class="cat-heading">Suspects</h3>
+        <h3 class="cat-heading">{{ t()('evidence.suspects') }}</h3>
         <div class="card-grid">
           @for (card of data.suspects(); track card.id) {
             <app-evidence-card
@@ -24,7 +25,7 @@ import { Category } from '../../../domain/models/card.model';
         </div>
       </div>
       <div class="category-group">
-        <h3 class="cat-heading">Locations</h3>
+        <h3 class="cat-heading">{{ t()('evidence.locations') }}</h3>
         <div class="card-grid">
           @for (card of data.locations(); track card.id) {
             <app-evidence-card
@@ -37,7 +38,7 @@ import { Category } from '../../../domain/models/card.model';
         </div>
       </div>
       <div class="category-group">
-        <h3 class="cat-heading">Weapons</h3>
+        <h3 class="cat-heading">{{ t()('evidence.weapons') }}</h3>
         <div class="card-grid">
           @for (card of data.weapons(); track card.id) {
             <app-evidence-card
@@ -54,7 +55,7 @@ import { Category } from '../../../domain/models/card.model';
         class="btn-primary submit-btn"
         [disabled]="!ui.selectedCardId() || ui.isSubmitting()"
         (click)="submit()">
-        Submit Guess
+        {{ t()('evidence.submit') }}
       </button>
     </section>
   `,
@@ -71,6 +72,7 @@ export class EvidencePanelComponent {
   readonly store = inject(GameStore);
   readonly data = inject(DataStore);
   readonly ui = inject(UiStore);
+  protected readonly t = inject(I18nService).t;
 
   readonly targetCategory = computed((): Category =>
     this.store.activePsychic()?.currentTarget ?? 'suspect'

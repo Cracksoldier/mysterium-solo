@@ -1,0 +1,44 @@
+[
+  {
+    "id": "wpn_01",
+    "category": "weapon",
+    "name": "Der Brieföffner",
+    "description": "Silberbeschlagen und schmal wie ein Flüstern. Im Schreibtisch gefunden – seine Klinge zu scharf für bloße Korrespondenz.",
+    "tags": ["silver", "sharp", "small", "hands", "writing", "thin", "quiet", "blade"]
+  },
+  {
+    "id": "wpn_02",
+    "category": "weapon",
+    "name": "Die Karaffe",
+    "description": "Schwerer Kristall, noch halb gefüllt mit Portwein. Der Boden ist in einer Form gerissen, die eine Geschichte erzählt.",
+    "tags": ["glass", "heavy", "wine", "crystal", "blunt", "red", "indoor", "table"]
+  },
+  {
+    "id": "wpn_03",
+    "category": "weapon",
+    "name": "Die Chirurgenklemme",
+    "description": "Kaltes Eisen, für den Verschluss bestimmt. In dieser Nacht nicht für die Chirurgie eingesetzt.",
+    "tags": ["iron", "medicine", "cold", "sharp", "tools", "hands", "cutting", "metal"]
+  },
+  {
+    "id": "wpn_04",
+    "category": "weapon",
+    "name": "Das Seil",
+    "description": "Jute, salzverkrustet, mindestens dreißig Jahre alt. Der Knoten ist ein Matrosenschlag.",
+    "tags": ["rope", "sea", "knot", "old", "stiffness", "enclosure", "hands", "salt"]
+  },
+  {
+    "id": "wpn_05",
+    "category": "weapon",
+    "name": "Die Glasscherbe",
+    "description": "Abgebrochen von etwas Größerem – einem Spiegel vielleicht, oder einem Fenster, das geschlossen bleiben sollte.",
+    "tags": ["glass", "sharp", "reflection", "broken", "small", "light", "thin", "cutting"]
+  },
+  {
+    "id": "wpn_06",
+    "category": "weapon",
+    "name": "Das vergiftete Fläschchen",
+    "description": "Eine kleine dunkle Flasche ohne Etikett. Der Rückstand innen ist eingetrocknet – die Farbe alter Blätter.",
+    "tags": ["poison", "small", "dark", "plants", "decay", "smell", "apothecary", "bottle"]
+  }
+]

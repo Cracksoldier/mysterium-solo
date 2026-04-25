@@ -2,6 +2,7 @@ import { ApplicationConfig, provideZonelessChangeDetection, APP_INITIALIZER } fr
 import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { DataStore } from './state/data.store';
+import { I18nService } from './core/services/i18n.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -9,8 +10,11 @@ export const appConfig: ApplicationConfig = {
     provideRouter(appRoutes, withComponentInputBinding()),
     {
       provide: APP_INITIALIZER,
-      useFactory: (data: DataStore) => () => data.loadAllCards(),
-      deps: [DataStore],
+      useFactory: (i18n: I18nService, data: DataStore) => async () => {
+        await i18n.init();
+        await data.loadAllCards(i18n.lang());
+      },
+      deps: [I18nService, DataStore],
       multi: true,
     },
   ],

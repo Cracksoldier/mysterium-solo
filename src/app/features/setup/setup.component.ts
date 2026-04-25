@@ -1,9 +1,10 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, computed } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GameStore } from '../../state/game.store';
 import { DataStore } from '../../state/data.store';
 import { Difficulty } from '../../domain/models/game-session.model';
+import { I18nService } from '../../core/services/i18n.service';
 
 @Component({
   selector: 'app-setup',
@@ -11,18 +12,18 @@ import { Difficulty } from '../../domain/models/game-session.model';
   template: `
     <main class="setup">
       <div class="setup-card">
-        <a class="back-link" (click)="router.navigate(['/'])" role="button" tabindex="0" (keydown.enter)="router.navigate(['/'])">← Back</a>
-        <h2>New Séance</h2>
+        <a class="back-link" (click)="router.navigate(['/'])" role="button" tabindex="0" (keydown.enter)="router.navigate(['/'])">{{ t()('setup.back') }}</a>
+        <h2>{{ t()('setup.heading') }}</h2>
 
         <section class="field">
-          <label for="title">Session Title</label>
-          <input id="title" [(ngModel)]="title" placeholder="The Ashwood Mansion Case" maxlength="60" />
+          <label for="title">{{ t()('setup.session-title') }}</label>
+          <input id="title" [(ngModel)]="title" [placeholder]="t()('setup.title-placeholder')" maxlength="60" />
         </section>
 
         <section class="field">
-          <label>Difficulty</label>
+          <label>{{ t()('setup.difficulty') }}</label>
           <div class="difficulty-grid">
-            @for (d of difficulties; track d.value) {
+            @for (d of difficulties(); track d.value) {
               <button
                 class="diff-btn"
                 [class.selected]="difficulty() === d.value"
@@ -36,7 +37,7 @@ import { Difficulty } from '../../domain/models/game-session.model';
         </section>
 
         <section class="field">
-          <label>Number of Psychics</label>
+          <label>{{ t()('setup.psychic-count') }}</label>
           <div class="count-grid">
             @for (n of [1, 2, 3]; track n) {
               <button
@@ -51,18 +52,18 @@ import { Difficulty } from '../../domain/models/game-session.model';
         </section>
 
         <section class="field">
-          <label>Psychic Names</label>
+          <label>{{ t()('setup.psychic-names') }}</label>
           @for (i of psychicIndexes(); track i) {
             <input
               [id]="'name-' + i"
               [(ngModel)]="psychicNames[i]"
-              [placeholder]="'Psychic ' + (i + 1)"
+              [placeholder]="t()('setup.psychic-placeholder') + ' ' + (i + 1)"
               style="margin-bottom: 0.5rem; display: block; width: 100%;" />
           }
         </section>
 
         <button class="btn-primary start-btn" (click)="start()" [disabled]="!canStart()">
-          Begin Séance
+          {{ t()('setup.begin') }}
         </button>
       </div>
     </main>
@@ -89,17 +90,22 @@ export class SetupComponent {
   readonly store = inject(GameStore);
   readonly data = inject(DataStore);
   readonly router = inject(Router);
+  private readonly i18n = inject(I18nService);
+  protected readonly t = this.i18n.t;
 
   title = '';
   psychicNames: string[] = ['', '', ''];
   readonly difficulty = signal<Difficulty>('normal');
   readonly psychicCount = signal(1);
 
-  readonly difficulties = [
-    { value: 'easy' as Difficulty, label: 'Easy', hint: '3 vision cards, big hand' },
-    { value: 'normal' as Difficulty, label: 'Normal', hint: '2 vision cards, 6-card hand' },
-    { value: 'hard' as Difficulty, label: 'Hard', hint: '1 vision card, imperfect ghost' },
-  ];
+  readonly difficulties = computed(() => {
+    const t = this.t();
+    return [
+      { value: 'easy' as Difficulty, label: t('difficulty.easy'), hint: t('difficulty.easy.hint') },
+      { value: 'normal' as Difficulty, label: t('difficulty.normal'), hint: t('difficulty.normal.hint') },
+      { value: 'hard' as Difficulty, label: t('difficulty.hard'), hint: t('difficulty.hard.hint') },
+    ];
+  });
 
   psychicIndexes() {
     return Array.from({ length: this.psychicCount() }, (_, i) => i);
@@ -114,8 +120,9 @@ export class SetupComponent {
   }
 
   start(): void {
+    const placeholder = this.t()('setup.psychic-placeholder');
     const names = Array.from({ length: this.psychicCount() }, (_, i) =>
-      this.psychicNames[i]?.trim() || `Psychic ${i + 1}`
+      this.psychicNames[i]?.trim() || `${placeholder} ${i + 1}`
     );
     this.store.startGame({
       title: this.title.trim(),

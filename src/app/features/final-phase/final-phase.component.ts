@@ -1,21 +1,22 @@
 import { Component, inject, computed } from '@angular/core';
 import { GameStore } from '../../state/game.store';
 import { DataStore } from '../../state/data.store';
+import { I18nService } from '../../core/services/i18n.service';
 
 @Component({
   selector: 'app-final-phase',
   template: `
     <main class="final-phase">
       <div class="final-card">
-        <p class="eyebrow">The Final Revelation</p>
-        <h2>The Ghost's Last Vision</h2>
-        <p class="intro">The Ghost reveals one final set of visions — pointing to the true murder. Vote wisely.</p>
+        <p class="eyebrow">{{ t()('final.eyebrow') }}</p>
+        <h2>{{ t()('final.title') }}</h2>
+        <p class="intro">{{ t()('final.intro') }}</p>
 
         @if (finalVisions()) {
           <div class="vision-trio">
             @for (cat of categories; track cat) {
               <div class="vision-item">
-                <span class="cat-label">{{ cat }}</span>
+                <span class="cat-label">{{ t()('cat.' + cat) }}</span>
                 @if (getVisionCard(cat); as vc) {
                   <div class="mini-vision-card">
                     <strong>{{ vc.title }}</strong>
@@ -28,7 +29,7 @@ import { DataStore } from '../../state/data.store';
         }
 
         <div class="vote-section">
-          <h3>Whose board is the true murder?</h3>
+          <h3>{{ t()('final.vote-heading') }}</h3>
           <div class="psychic-votes">
             @for (p of psychics(); track p.id) {
               <button class="vote-btn" (click)="vote(p.id)">
@@ -68,6 +69,7 @@ import { DataStore } from '../../state/data.store';
 export class FinalPhaseComponent {
   readonly store = inject(GameStore);
   readonly data = inject(DataStore);
+  protected readonly t = inject(I18nService).t;
   readonly categories = ['suspect', 'location', 'weapon'] as const;
   readonly psychics = computed(() => this.store.session()?.psychics ?? []);
   readonly finalVisions = computed(() => this.store.session()?.finalVisionCards);

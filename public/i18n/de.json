@@ -1,0 +1,72 @@
+{
+  "home.eyebrow": "Der Geist wartet",
+  "home.subtitle": "Eine Einzelspieler-Séance. Entschlüssle die Visionen. Löse den Mord.",
+  "home.new-game": "Neue Séance beginnen",
+  "home.resume": "Spiel fortsetzen",
+  "home.footer": "Basierend auf Mysterium von Libellud · Solo-Adaption",
+
+  "setup.back": "← Zurück",
+  "setup.heading": "Neue Séance",
+  "setup.session-title": "Titel der Sitzung",
+  "setup.title-placeholder": "Der Fall des Ashwood-Herrenhauses",
+  "setup.difficulty": "Schwierigkeit",
+  "setup.psychic-count": "Anzahl der Medien",
+  "setup.psychic-names": "Namen der Medien",
+  "setup.begin": "Séance beginnen",
+  "setup.psychic-placeholder": "Medium",
+
+  "difficulty.easy": "Leicht",
+  "difficulty.easy.hint": "3 Visionskarten, große Hand",
+  "difficulty.normal": "Normal",
+  "difficulty.normal.hint": "2 Visionskarten, 6-Karten-Hand",
+  "difficulty.hard": "Schwer",
+  "difficulty.hard.hint": "1 Visionskarte, unvollkommener Geist",
+
+  "board.guessing": "Schätzung:",
+  "board.abandon": "Spiel aufgeben",
+  "board.abandon-confirm": "Diese Séance aufgeben?",
+  "board.abandon-warning": "Dein Fortschritt geht verloren.",
+  "board.cancel": "Abbrechen",
+  "board.abandon-action": "Aufgeben",
+
+  "round.label": "Runde",
+  "round.progress": "Rundenfortschritt",
+  "round.aria": "Runde {n} von 7",
+
+  "vision.label": "Der Geist schickt dir eine Vision…",
+  "vision.empty": "Wartet auf die Vision des Geistes…",
+  "vision.aria": "Visionskarten",
+
+  "evidence.suspects": "Verdächtige",
+  "evidence.locations": "Orte",
+  "evidence.weapons": "Waffen",
+  "evidence.submit": "Vermutung einreichen",
+  "evidence.aria": "Beweisboard",
+
+  "psychic.label": "Medien",
+  "psychic.aria": "Medien-Übersicht",
+  "psychic.incorrect-aria": "falsch",
+
+  "final.eyebrow": "Die letzte Offenbarung",
+  "final.title": "Die letzte Vision des Geistes",
+  "final.intro": "Der Geist enthüllt eine letzte Reihe von Visionen – die auf den wahren Mord hinweisen. Wähle weise.",
+  "final.vote-heading": "Wessen Brett zeigt den wahren Mord?",
+
+  "result.victory": "Sieg",
+  "result.defeat": "Niederlage",
+  "result.victory-title": "Die Wahrheit enthüllt",
+  "result.defeat-title": "Der Geist verstummt",
+  "result.victory-subtitle": "Die Séance ist beendet. Der Mord ist gelöst.",
+  "result.defeat-subtitle": "Die Runden sind erschöpft. Das Rätsel bleibt.",
+  "result.board-suffix": "s Brett",
+  "result.rounds-used": "Verbrauchte Runden",
+  "result.incorrect-guesses": "Falsche Vermutungen",
+  "result.cards-seen": "Gesehene Visionskarten",
+  "result.export": "Bericht speichern (Markdown)",
+  "result.play-again": "Nochmal spielen",
+  "result.home": "Startseite",
+
+  "cat.suspect": "Verdächtiger",
+  "cat.location": "Ort",
+  "cat.weapon": "Waffe"
+}

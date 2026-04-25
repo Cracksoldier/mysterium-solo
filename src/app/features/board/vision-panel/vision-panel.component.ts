@@ -1,19 +1,20 @@
 import { Component, inject } from '@angular/core';
 import { GameStore } from '../../../state/game.store';
+import { I18nService } from '../../../core/services/i18n.service';
 import { VisionCardComponent } from './vision-card/vision-card.component';
 
 @Component({
   selector: 'app-vision-panel',
   imports: [VisionCardComponent],
   template: `
-    <section class="vision-panel" aria-label="Vision Cards">
-      <p class="ghost-label">The Ghost sends you a vision…</p>
+    <section class="vision-panel" [attr.aria-label]="t()('vision.aria')">
+      <p class="ghost-label">{{ t()('vision.label') }}</p>
       <div class="cards-list">
         @for (card of store.currentClueCards(); track card.id) {
           <app-vision-card [card]="card" />
         }
         @if (store.currentClueCards().length === 0) {
-          <p class="empty-hint">Awaiting the Ghost's vision…</p>
+          <p class="empty-hint">{{ t()('vision.empty') }}</p>
         }
       </div>
     </section>
@@ -27,4 +28,5 @@ import { VisionCardComponent } from './vision-card/vision-card.component';
 })
 export class VisionPanelComponent {
   readonly store = inject(GameStore);
+  protected readonly t = inject(I18nService).t;
 }

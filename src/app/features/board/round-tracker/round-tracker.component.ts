@@ -1,17 +1,18 @@
 import { Component, inject, computed } from '@angular/core';
 import { GameStore } from '../../../state/game.store';
+import { I18nService } from '../../../core/services/i18n.service';
 import { ProgressBarComponent } from '../../../shared/components/progress-bar/progress-bar.component';
 
 @Component({
   selector: 'app-round-tracker',
   imports: [ProgressBarComponent],
   template: `
-    <div class="round-tracker" aria-label="Round progress">
-      <span class="label">Round</span>
-      <span class="round-num" [attr.aria-label]="'Round ' + store.round() + ' of 7'">
+    <div class="round-tracker" [attr.aria-label]="t()('round.progress')">
+      <span class="label">{{ t()('round.label') }}</span>
+      <span class="round-num" [attr.aria-label]="t()('round.label') + ' ' + store.round()">
         {{ store.round() }} <em>/ 7</em>
       </span>
-      <app-progress-bar [percent]="percent()" label="Round progress" />
+      <app-progress-bar [percent]="percent()" [label]="t()('round.progress')" />
     </div>
   `,
   styles: [`
@@ -23,5 +24,6 @@ import { ProgressBarComponent } from '../../../shared/components/progress-bar/pr
 })
 export class RoundTrackerComponent {
   readonly store = inject(GameStore);
+  protected readonly t = inject(I18nService).t;
   readonly percent = computed(() => (this.store.round() / 7) * 100);
 }

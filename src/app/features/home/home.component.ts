@@ -1,24 +1,25 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { GameStore } from '../../state/game.store';
+import { I18nService } from '../../core/services/i18n.service';
 
 @Component({
   selector: 'app-home',
   template: `
     <main class="home">
       <div class="hero">
-        <p class="eyebrow">The Ghost awaits</p>
+        <p class="eyebrow">{{ t()('home.eyebrow') }}</p>
         <h1>Mysterium<br><span>Solo</span></h1>
-        <p class="subtitle">A single-player séance. Decode the visions. Solve the murder.</p>
+        <p class="subtitle">{{ t()('home.subtitle') }}</p>
         <div class="actions">
-          <button class="btn-primary" (click)="newGame()">Begin a New Séance</button>
+          <button class="btn-primary" (click)="newGame()">{{ t()('home.new-game') }}</button>
           @if (store.hasSavedSession()) {
-            <button class="btn-secondary" (click)="resume()">Resume Previous Game</button>
+            <button class="btn-secondary" (click)="resume()">{{ t()('home.resume') }}</button>
           }
         </div>
       </div>
       <footer class="home-footer">
-        Based on <em>Mysterium</em> by Libellud &bull; Solo adaptation
+        {{ t()('home.footer') }}
       </footer>
     </main>
   `,
@@ -36,6 +37,7 @@ import { GameStore } from '../../state/game.store';
 export class HomeComponent {
   readonly store = inject(GameStore);
   private readonly router = inject(Router);
+  protected readonly t = inject(I18nService).t;
 
   newGame(): void { this.router.navigate(['/setup']); }
   resume(): void { this.store.loadSavedSession(); }

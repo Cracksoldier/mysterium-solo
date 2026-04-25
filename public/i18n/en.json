@@ -1,0 +1,72 @@
+{
+  "home.eyebrow": "The Ghost awaits",
+  "home.subtitle": "A single-player séance. Decode the visions. Solve the murder.",
+  "home.new-game": "Begin a New Séance",
+  "home.resume": "Resume Previous Game",
+  "home.footer": "Based on Mysterium by Libellud · Solo adaptation",
+
+  "setup.back": "← Back",
+  "setup.heading": "New Séance",
+  "setup.session-title": "Session Title",
+  "setup.title-placeholder": "The Ashwood Mansion Case",
+  "setup.difficulty": "Difficulty",
+  "setup.psychic-count": "Number of Psychics",
+  "setup.psychic-names": "Psychic Names",
+  "setup.begin": "Begin Séance",
+  "setup.psychic-placeholder": "Psychic",
+
+  "difficulty.easy": "Easy",
+  "difficulty.easy.hint": "3 vision cards, big hand",
+  "difficulty.normal": "Normal",
+  "difficulty.normal.hint": "2 vision cards, 6-card hand",
+  "difficulty.hard": "Hard",
+  "difficulty.hard.hint": "1 vision card, imperfect ghost",
+
+  "board.guessing": "Guessing:",
+  "board.abandon": "Abandon Game",
+  "board.abandon-confirm": "Abandon this séance?",
+  "board.abandon-warning": "Your progress will be lost.",
+  "board.cancel": "Cancel",
+  "board.abandon-action": "Abandon",
+
+  "round.label": "Round",
+  "round.progress": "Round progress",
+  "round.aria": "Round {n} of 7",
+
+  "vision.label": "The Ghost sends you a vision…",
+  "vision.empty": "Awaiting the Ghost's vision…",
+  "vision.aria": "Vision Cards",
+
+  "evidence.suspects": "Suspects",
+  "evidence.locations": "Locations",
+  "evidence.weapons": "Weapons",
+  "evidence.submit": "Submit Guess",
+  "evidence.aria": "Evidence Board",
+
+  "psychic.label": "Psychics",
+  "psychic.aria": "Psychic Overview",
+  "psychic.incorrect-aria": "incorrect",
+
+  "final.eyebrow": "The Final Revelation",
+  "final.title": "The Ghost's Last Vision",
+  "final.intro": "The Ghost reveals one final set of visions — pointing to the true murder. Vote wisely.",
+  "final.vote-heading": "Whose board is the true murder?",
+
+  "result.victory": "Victory",
+  "result.defeat": "Defeat",
+  "result.victory-title": "The Truth Revealed",
+  "result.defeat-title": "The Ghost Falls Silent",
+  "result.victory-subtitle": "The séance is complete. The murder is solved.",
+  "result.defeat-subtitle": "The rounds are exhausted. The mystery endures.",
+  "result.board-suffix": "'s Board",
+  "result.rounds-used": "Rounds used",
+  "result.incorrect-guesses": "Incorrect guesses",
+  "result.cards-seen": "Vision cards seen",
+  "result.export": "Save Report (Markdown)",
+  "result.play-again": "Play Again",
+  "result.home": "Home",
+
+  "cat.suspect": "suspect",
+  "cat.location": "location",
+  "cat.weapon": "weapon"
+}
